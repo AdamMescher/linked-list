@@ -79,6 +79,7 @@ button {
   color: white;
   font-size: 40px;
   font-weight: 800;
+  margin: 0;
 }
 
 .logo-image {
@@ -88,6 +89,10 @@ button {
 .bookmark-input {
   display: flex;
   flex-flow: column wrap;
+}
+
+.bookmark-title-input, .bookmark-url-input, .enter-button {
+  margin-top: 25px;
 }
 
 .enter-button {

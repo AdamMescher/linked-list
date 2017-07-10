@@ -1,0 +1,129 @@
+/* ------------------------------------------------------
+
+  ---------------------
+  - TABLE OF CONTENTS -
+  ---------------------
+
+  *
+  *
+  *
+
+  ----------
+  -  FONTS -
+  ----------
+
+  * OpenSans
+    - Extra-Bold:  800
+    - Regular:     400
+
+  ------------------
+  -  COLOR PALETTE -
+  ------------------
+
+  #455A64 - Dark Background
+  #CFD8DC - Light Background
+  #FFFFFF - Linked List Logo Text Color
+
+  #FFC107 - Button Color
+  #FFD773 - Button Color :hover
+  #FFFFFF - Button Text Color
+
+  #607D8B - Bookmark Box Border
+  #455A64 - Bookmark Box Title
+  #607D8B - Bookmark URL
+  #F2F4F4 - Bookmark URL Underline
+  #455A64 - Bookmark Read / Delete
+  #455A64 - Bookmark URL | :hover
+  #FFC107 - Bookmark URL Unerline | :hover
+  #F2F4F4 - Bookmark Box Background Color | When Read
+  #CFD8DC - Bookmark URL Underline | When Read
+  #F05A28 - Bookmark Read | When Read
+
+
+
+------------------------------------------------------ */
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  display: flex;
+}
+
+button {
+
+}
+
+.bookmark-title, .bookmark-url, .bookmark-input {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+/* Left Side */
+
+.left-side {
+  display: flex;
+  background-color: #455A64;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo-text {
+  color: white;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.logo-image {
+  width: 60px;
+}
+
+.bookmark-input {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.enter-button {
+  border: 100px;
+  width: 300px;
+  background-color: #FFC107;
+  color: #FFFFFF;
+}
+
+
+
+/* Right Side */
+
+.right-side {
+  background-color: #CFD8DC;
+  width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.bookmark-box {
+  margin-top: 25px;
+  width: 85%;
+  background: #FFFFFF;
+  border: solid #607D8B;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+}
+
+.bookmark-bottom-line {
+  width: 90%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+}

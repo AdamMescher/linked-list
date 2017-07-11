@@ -103,7 +103,9 @@ button {
   color: #FFFFFF;
 }
 
-
+.enter-button:hover {
+  background-color: #FFD773;
+}
 
 /* Right Side */
 
@@ -143,6 +145,15 @@ button {
 
 .bookmark-url-link, .read-link, .delete-link {
   text-decoration: underline #F2F4F4;
+}
+
+.bookmark-url-link:hover, .read-link:hover, .delete-link:hover {
+  color: #455A64;
+  text-decoration: underline #FFC107;
+}
+
+.bookmark-url-link:hover, .read-link:hover {
+  font-weight: 800;
 }
 
 .bookmark-url {

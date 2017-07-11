@@ -32,6 +32,7 @@
   #455A64 - Bookmark Box Title
   #607D8B - Bookmark URL
   #F2F4F4 - Bookmark URL Underline
+  #CFD8DC - Bookmark URL Border
   #455A64 - Bookmark Read / Delete
   #455A64 - Bookmark URL | :hover
   #FFC107 - Bookmark URL Unerline | :hover
@@ -115,20 +116,46 @@ button {
 }
 
 .bookmark-box {
-  margin-top: 25px;
-  width: 85%;
+  margin-top: 3%;
+  width: 92%;
   background: #FFFFFF;
-  border: solid #607D8B;
+  border: 2px solid #607D8B;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
 }
 
 .bookmark-bottom-line {
-  width: 90%;
+  height: 28px;
+  width: 94%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   align-self: center;
+}
+
+.bookmark-title {
+  color: #455A64;
+  font-weight: 700;
+  margin: 2% 0 0 3%;
+}
+
+.bookmark-url-link, .read-link, .delete-link {
+  text-decoration: underline #F2F4F4;
+}
+
+.bookmark-url {
+  padding: 4% 0 4% 0;
+  margin: 1% 3% 1% 3%;
+  border-top: 1px solid #CFD8DC;
+  border-bottom: 1px solid #CFD8DC;
+}
+
+.bookmark-url-link {
+  color: #607D8B;
+}
+
+.read-link, .delete-link {
+  color: #455A64;
 }

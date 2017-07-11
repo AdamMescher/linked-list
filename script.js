@@ -22,11 +22,10 @@ $('.enter-button').on('click', function() {
 $('.read-link').on('click', function (){
   event.preventDefault();
   $('.bookmark-box').toggleClass('read-box');
-  $('.bookmark-url-link').addClass('read-url');
-  $('.read-link').addClass('read-read');
-  $('.delete-link').addClass('read-delete');
+  $('.bookmark-url-link').toggleClass('read-url');
+  $('.read-link').toggleClass('read-read');
+  $('.delete-link').toggleClass('read-delete');
 });
-
 
 //
 // function clearInput() {

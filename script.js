@@ -27,7 +27,7 @@ $('.read-link').on('click', function (){
   $('.delete-link').toggleClass('read-delete');
 });
 
-//
-// function clearInput() {
-//
-// };
+$('.delete-button').on('click', function() {
+  event.preventDefault();
+  $('.bookmark-box').remove();
+})

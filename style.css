@@ -170,3 +170,10 @@ button {
 .read-link, .delete-link {
   color: #455A64;
 }
+
+.read-box {
+  background: #F2F4F4;
+  border: solid 10px yellow;
+}
+
+.bookmark-box

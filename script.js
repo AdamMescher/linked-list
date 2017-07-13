@@ -12,11 +12,7 @@
 
 console.log("page refresh");
 
-<<<<<<< HEAD
-class State = {
-=======
 var state = {
->>>>>>> bookmark-box-function
   activeBookmarksTotal: 0,
   activeBookmarksUnread: 0,
   activeBookmarksRead: 0,
@@ -47,17 +43,13 @@ $('.enter-button').on('click', function(event) {
 $('.right-side').on('click', '.read-link', function(event) {
   event.preventDefault();
   $(this).closest('article').toggleClass('read-box');
-<<<<<<< HEAD
   $(this).closest('article').find('').toggleClass('read-url');
-=======
-  $(this).parent().parent().siblings().find('.bookmark-url').find('.bookmark-url-link').toggleClass('read-url');
->>>>>>> bookmark-box-function
   $(this).toggleClass('read-read');
   $(this).closest('div').find('.delete-link').toggleClass('read-delete');
 });
 
-$('.bookmark-box').on('click', '.delete-button', function() {
-  $('.bookmark-box').remove();
+$('.right-side').on('click', '.delete-link', function() {
+  $(this).parents().eq(2).remove();
 });
 
 function createBookmarkBox(title, url) {

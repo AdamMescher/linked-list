@@ -116,6 +116,12 @@ main {
   background-color: #FFD773;
 }
 
+.error-message {
+  background-color: firebrick;
+  width: 86%;
+  color: white;
+}
+
 /* ==============
     Right Side
 ===============*/

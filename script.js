@@ -19,15 +19,12 @@ var state = {
   totalBookmarksCreated: 0,
 }
 
-$('.enter-button').on('click', function(event) {
-  event.preventDefault();
+$('.enter-button').on('click', function(e) {
+  e.preventDefault();
   var bookmarkTitleInput = $('.bookmark-title-input').val();
   var bookmarkUrlInput = $('.bookmark-url-input').val();
 
-  // var bookmarkTitle = $('.bookmark-title');
-  // var bookmarkUrl = $('.bookmark-url');
-
-  createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
+  bookmarkTitleInput === '' || bookmarkUrlInput === '' ? displayErrorMessage() : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
 
   state.totalBookmarksCreated += 1;
 
@@ -37,13 +34,13 @@ $('.enter-button').on('click', function(event) {
   // if something there && valid activate
 
   // form clear
-  resetForm();
+  // resetForm();
 });
 
-$('.right-side').on('click', '.read-link', function(event) {
-  event.preventDefault();
+$('.right-side').on('click', '.read-link', function(e) {
+  e.preventDefault();
   $(this).closest('article').toggleClass('read-box');
-  $(this).closest('article').find('').toggleClass('read-url');
+  $(this).closest('article').find('.bookmark-url-link').toggleClass('read-url');
   $(this).toggleClass('read-read');
   $(this).closest('div').find('.delete-link').toggleClass('read-delete');
 });
@@ -66,3 +63,11 @@ function createBookmarkBox(title, url) {
 function resetForm() {
   $('input[type="text"]').val('');
 }
+
+function displayErrorMessage() {
+  $('.left-side').prepend(``);
+};
+
+function removeErrorMessage() {
+
+};

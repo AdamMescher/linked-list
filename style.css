@@ -4,17 +4,18 @@
   - TABLE OF CONTENTS -
   ---------------------
 
-  *
-  *
-  *
+  - Left Side
+  - Right Side
+  - Media Queries
+    * 320px
 
   ----------
   -  FONTS -
   ----------
 
-  * OpenSans
-    - Extra-Bold:  800
-    - Regular:     400
+  - OpenSans
+    * Extra-Bold:  800
+    * Regular:     400
 
   ------------------
   -  COLOR PALETTE -
@@ -44,6 +45,7 @@
 
 ------------------------------------------------------ */
 
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -53,16 +55,14 @@ main {
   display: flex;
 }
 
-button {
-
-}
-
 .bookmark-title, .bookmark-url, .bookmark-input {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
-/* Left Side */
+/* =============
+    Left Side
+==============*/
 
 .left-side {
   display: flex;
@@ -78,27 +78,36 @@ button {
 
 .logo-text {
   color: white;
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 800;
   margin: 0;
 }
 
 .logo-image {
-  width: 60px;
+  height: 38px;
 }
 
 .bookmark-input {
   display: flex;
   flex-flow: column wrap;
+  width: 86%;
 }
 
 .bookmark-title-input, .bookmark-url-input, .enter-button {
   margin-top: 25px;
+
+}
+
+.bookmark-title-input, .bookmark-url-input {
+  font-size: 26px;
 }
 
 .enter-button {
+  font-weight: 400;
+  font-size: 16px;
+  height: 30px;
   border: 100px;
-  width: 300px;
+  width: 100%;
   background-color: #FFC107;
   color: #FFFFFF;
 }
@@ -107,7 +116,9 @@ button {
   background-color: #FFD773;
 }
 
-/* Right Side */
+/* ==============
+    Right Side
+===============*/
 
 .right-side {
   background-color: #CFD8DC;
@@ -171,6 +182,10 @@ button {
   color: #455A64;
 }
 
+.read-button, .delete-button {
+  font-size: 13px;
+}
+
 .read-box {
   background: #F2F4F4;
 }
@@ -182,4 +197,10 @@ button {
 .read-read {
   color: #F05A28;
   font-weight: 800;
+}
+
+@media screen (max-size: 320px) {
+  main {
+    flex-direction: column;
+  }
 }

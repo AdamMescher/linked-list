@@ -19,23 +19,22 @@ var state = {
 
 $('.enter-button').on('click', function(e) {
   e.preventDefault();
+  removeErrorMessage();
   var bookmarkTitleInput = $('.bookmark-title-input').val();
   var bookmarkUrlInput = $('.bookmark-url-input').val();
 
   bookmarkTitleInput === '' ? displayErrorMessage('Title cannot be blank!') : null;
   bookmarkUrlInput === '' ? displayErrorMessage('URL cannot be blank!') : null;
 
-  $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput)
-
-  state.totalBookmarksCreated += 1;
-
+  $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
 
   // if input box === empty disable
 
   // if something there && valid activate
 
   // form clear
-  // resetForm();
+  resetForm();
+  $('.bookmark-title-input').focus();
 });
 
 $('.right-side').on('click', '.read-link', function(e) {

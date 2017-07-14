@@ -6,6 +6,7 @@
 
   - State Object
   - Input Field Event Listener
+  - Enter Button Event Listener
   - Read Button Event Listener
   - Delete Button Event Listener
   - Function Declarations
@@ -23,9 +24,9 @@ var state = {
   numberOfReadLinks: 0,
   numberOfUnreadLinks: 0,
   updateLinkCount: function() {
-    linksCurrentlyOnPage = $('.bookmark-box').find().length;
-    numberOfReadLinks = $('.read').find().length;
-    numberOfUnreadLinks = $('.bookmark-box').find().length - $('.read').find().length;
+    linksCurrentlyOnPage = $('.bookmark-box').length || 0;
+    numberOfReadLinks = $('.read-box').length || 0;
+    numberOfUnreadLinks = $('.bookmark-box').length - $('.read-box').length || 0;
 
     $('.total-link-number').text(linksCurrentlyOnPage);
     $('.read-link-number').text(numberOfReadLinks);
@@ -33,7 +34,6 @@ var state = {
   }
 }
 
-// CHECK NUMBER OF LINKS ON PAGE LOAD
 state.updateLinkCount();
 
 // INPUT FIELD EVENT LISTENER
@@ -56,12 +56,8 @@ $('.enter-button').on('click', function(e) {
 
   removeErrorMessage();
 
-  // disableButton(enterButton);
-
   bookmarkTitleInput === '' ? displayErrorMessage('Title cannot be blank!') : null;
   bookmarkUrlInput === '' ? displayErrorMessage('URL cannot be blank!') : null;
-
-  bookmarkTitleInput.length === 0 || bookmarkUrlInput.length === 0 ? null : enableButton(enterButton);
 
   $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
 
@@ -79,12 +75,20 @@ $('.right-side').on('click', '.read-link', function(e) {
   $(this).closest('article').find('.bookmark-url-link').toggleClass('read-url');
   $(this).toggleClass('read-read');
   $(this).closest('div').find('.delete-link').toggleClass('read-delete');
+  state.updateLinkCount();
 });
 
 // DELETE BUTTON EVENT LISTENER
 $('.right-side').on('click', '.delete-link', function() {
   $(this).parents().eq(2).remove();
+  state.updateLinkCount();
 });
+
+// CLEAR READ BOOKMARKS BUTTON
+
+$('.right-side').on('click', '.clear-button', function() {
+  console.log('click');
+})
 
 // FUNCTION DECLARATIONS
 

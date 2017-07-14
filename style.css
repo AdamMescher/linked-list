@@ -121,26 +121,31 @@ main {
   font-size: 26px;
 }
 
-.enter-button {
+.enter-button, .clear-button {
   font-weight: 400;
   font-size: 16px;
   height: 30px;
   border: 100px;
-  width: 100%;
+  /*width: 100%;*/
   background-color: #FFC107;
   color: #FFFFFF;
 }
 
-
-.enter-button:hover {
+.enter-button:hover,
+.clear-button:hover {
   background-color: #FFD773;
 }
 
-.enter-button:disabled {
+.enter-button:disabled,
+.clear-button:disabled {
   background-color: #D0D9DC;
 }
 
-.bookmark-title-input, .bookmark-url-input, .enter-button, .error-message {
+.bookmark-title-input,
+.bookmark-url-input,
+.enter-button,
+.clear-button, 
+.error-message {
   margin-top: 40px;
 }
 
@@ -275,8 +280,9 @@ main {
     font-size: 24px;
   }
 
-  .enter-button {
-    font-size: 18px;
+  .enter-button,
+  .clear-button {
+    font-size: 20px;
     font-weight: 700;
     height: 40px;
     margin-top: 15px;

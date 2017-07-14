@@ -154,8 +154,8 @@ main {
 }
 
 .bookmark-box {
-  height: 150px;
   margin-top: 3%;
+  margin-bottom: 3%;
   width: 92%;
   background: #FFFFFF;
   border: 2px solid #607D8B;
@@ -170,9 +170,11 @@ main {
   width: 94%;
   display: flex;
   flex-flow: row nowrap;
+  flex: none;
   justify-content: space-between;
   align-items: center;
   align-self: center;
+  padding: 1px 0 1px 0;
 }
 
 .bookmark-title {
@@ -226,7 +228,7 @@ main {
   font-weight: 800;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 710px) {
   main {
     flex-direction: column;
   }
@@ -235,11 +237,11 @@ main {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    height: 45%;
+    height: 40vh;
     width: 100%;
   }
   .right-side {
-    height: 55vh;
+    height: 60vh;
     width: 100%;
     flex-flow: column nowrap;
     overflow-y: scroll;
@@ -247,18 +249,24 @@ main {
   }
 
   .bookmark-box {
-    height: 130px;
     display: flex;
     flex-flow: column;
   }
 
-  .bookmark-title-input, .bookmark-url-input, .enter-button, .error-message {
+  .bookmark-bottom-line {
+    padding: 1px 0 1px 0;
+  }
+
+  .bookmark-title-input, .bookmark-url-input {
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 24px;
   }
 
   .enter-button {
-    height: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    height: 40px;
+    margin-top: 15px;
   }
 
   .logo-text {
@@ -274,7 +282,7 @@ main {
   }
 
   .error-message, .error-cause {
-    font-size: 8px;
+    font-size: 12px;
     padding: -2px 0 -2px 0;
   }
 

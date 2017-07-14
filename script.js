@@ -17,9 +17,9 @@ var state = {
 }
 
 // if title is '' or if url is'' THEN disable enter button OTHERWISE enable enter button
-$('.bookmark-title-input').change(function() {
-  enableButton($('.enter-button'));
-})
+// $('.bookmark-title-input, bookmark-url-input').on('input', function() {
+//   $('.bookmark-title-input' === '' || $('.bookmark-url-input') === '' ? disableButton($('.enter-button')) : enableButton('.enter-button')
+// })
 
 
 $('.enter-button').on('click', function(e) {
@@ -39,6 +39,7 @@ $('.enter-button').on('click', function(e) {
 
   // form clear
   resetForm();
+
   $('.bookmark-title-input').focus();
 });
 
@@ -88,3 +89,5 @@ function enableButton(button) {
 // function isEmpty(input) {
 //   input === '' ?  : false;
 // }
+
+//

@@ -1,33 +1,61 @@
-//accept form input
-//TODO: clear input field after enter button click
-//create bookmarks box with form input
-//add and remove classes to html elements
-//mark as .read event
-//remove .read event
-//delete event
+/*  ------------------------------------------------------
 
+  ---------------------
+  - TABLE OF CONTENTS -
+  ---------------------
 
-// Time no longer exists wish-list
-// * 'Are you sure you want to delete this' message when pressing delete button
+  - State Object
+  - Input Field Event Listener
+  - Read Button Event Listener
+  - Delete Button Event Listener
+  - Function Declarations
+    * createBookmarkBox()
+    * resetForm()
+    * displayErrorMessage()
+    * removeErrorMessage()
+
+*/
+
+// STATE OBJECT
 
 var state = {
   linksCurrentlyOnPage: 0,
   numberOfReadLinks: 0,
-  numberOfUnreadLinks: 0
+  numberOfUnreadLinks: 0,
+  updateLinkCount: function() {
+    linksCurrentlyOnPage = $('.bookmark-box').find().length;
+    numberOfReadLinks = $('.read').find().length;
+    numberOfUnreadLinks = $('.bookmark-box').find().length - $('.read').find().length;
+
+    $('.total-link-number').text(linksCurrentlyOnPage);
+    $('.read-link-number').text(numberOfReadLinks);
+    $('.unread-link-number').text(numberOfUnreadLinks);
+  }
 }
 
-// if title is '' or if url is'' THEN disable enter button OTHERWISE enable enter button
-// $('.bookmark-title-input, bookmark-url-input').on('input', function() {
-//   $('.bookmark-title-input' === '' || $('.bookmark-url-input') === '' ? disableButton($('.enter-button')) : enableButton('.enter-button')
-// })
+// CHECK NUMBER OF LINKS ON PAGE LOAD
+state.updateLinkCount();
 
+// INPUT FIELD EVENT LISTENER
 
+$('bookmark-title-input').keyup(function() {
+  $('.enter-button').prop("disabled", !this.value);
+})
+
+$('.bookmark-url-input').keyup(function() {
+  $('.enter-button').prop("disabled", !this.value);
+})
+
+// ENTER BUTTON EVENT LISTENER
 $('.enter-button').on('click', function(e) {
   e.preventDefault();
+
   var enterButton = $('.enter-button');
   var bookmarkTitleInput = $('.bookmark-title-input').val();
   var bookmarkUrlInput = $('.bookmark-url-input').val();
+
   removeErrorMessage();
+
   // disableButton(enterButton);
 
   bookmarkTitleInput === '' ? displayErrorMessage('Title cannot be blank!') : null;
@@ -37,12 +65,14 @@ $('.enter-button').on('click', function(e) {
 
   $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
 
-  // form clear
   resetForm();
 
   $('.bookmark-title-input').focus();
+
+  state.updateLinkCount();
 });
 
+// READ BUTTON EVENT LISTENER
 $('.right-side').on('click', '.read-link', function(e) {
   e.preventDefault();
   $(this).closest('article').toggleClass('read-box');
@@ -51,9 +81,12 @@ $('.right-side').on('click', '.read-link', function(e) {
   $(this).closest('div').find('.delete-link').toggleClass('read-delete');
 });
 
+// DELETE BUTTON EVENT LISTENER
 $('.right-side').on('click', '.delete-link', function() {
   $(this).parents().eq(2).remove();
 });
+
+// FUNCTION DECLARATIONS
 
 function createBookmarkBox(title, url) {
   $('.right-side').prepend(`<article class="bookmark-box">
@@ -72,22 +105,8 @@ function resetForm() {
 
 function displayErrorMessage(cause) {
   $('.left-side').append(`<p class="error-message">Error: <span class="error-cause">${cause}</span></p>`);
-};
+}
 
 function removeErrorMessage() {
   $('.error-message').remove();
-};
-
-function disableButton(button){
-  button.prop("disabled", true);
 }
-
-function enableButton(button) {
-  button.prop("disabled", false);
-}
-
-// function isEmpty(input) {
-//   input === '' ?  : false;
-// }
-
-//

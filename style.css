@@ -1,13 +1,19 @@
 /* ------------------------------------------------------
-  I made a change
+
   ---------------------
   - TABLE OF CONTENTS -
   ---------------------
 
   - Left Side
+    * Logo
+    * Link Counter Display
+    * User Input
+    * Error Message
   - Right Side
-  - Media Queries
-    * 320px
+    * Bookmark Box
+  - Media Query 700 PX
+    * Left Side
+    * Right Side
 
   ----------
   -  FONTS -
@@ -42,10 +48,7 @@
   #CFD8DC - Bookmark URL Underline | When Read
   #F05A28 - Bookmark Read | When Read
 
-
-
 ------------------------------------------------------ */
-
 
 body {
   margin: 0;
@@ -76,6 +79,8 @@ main {
   align-items: center;
 }
 
+/* LOGO */
+
 .logo-text {
   color: white;
   font-size: 48px;
@@ -86,6 +91,20 @@ main {
 .logo-image {
   height: 38px;
 }
+
+/* LINK COUNTER DISPLAY */
+
+.counter-display {
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+
+.read-link-counter, .unread-link-counter {
+  margin-left: 10px;
+}
+
+/* USER INPUT */
 
 .bookmark-input {
   display: flex;
@@ -112,13 +131,20 @@ main {
   color: #FFFFFF;
 }
 
+
 .enter-button:hover {
   background-color: #FFD773;
+}
+
+.enter-button:disabled {
+  background-color: #D0D9DC;
 }
 
 .bookmark-title-input, .bookmark-url-input, .enter-button, .error-message {
   margin-top: 40px;
 }
+
+/* ERROR MESSAGE */
 
 .error-message {
   display: flex;
@@ -146,12 +172,15 @@ main {
 .right-side {
   background-color: #CFD8DC;
   width: 50%;
+  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  height: 100vh;
   overflow-y: scroll;
+  justify-content: flex-start;
 }
+
+/* BOOKMARK BOX */
 
 .bookmark-box {
   margin-top: 3%;
@@ -232,29 +261,13 @@ main {
   main {
     flex-direction: column;
   }
-
+/* LEFT SIDE */
   .left-side {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     height: 40vh;
     width: 100%;
-  }
-  .right-side {
-    height: 60vh;
-    width: 100%;
-    flex-flow: column nowrap;
-    overflow-y: scroll;
-    justify-content: : flex-start;
-  }
-
-  .bookmark-box {
-    display: flex;
-    flex-flow: column;
-  }
-
-  .bookmark-bottom-line {
-    padding: 1px 0 1px 0;
   }
 
   .bookmark-title-input, .bookmark-url-input {
@@ -289,5 +302,24 @@ main {
   .error-message {
     margin: 0;
     height: 8px;
+  }
+
+/* RIGHT SIDE */
+
+  .right-side {
+    height: 60vh;
+    width: 100%;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+    justify-content: : flex-start;
+  }
+
+  .bookmark-box {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .bookmark-bottom-line {
+    padding: 1px 0 1px 0;
   }
 }

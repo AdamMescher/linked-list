@@ -94,12 +94,6 @@ main {
 
 /* LINK COUNTER DISPLAY */
 
-.counter-display {
-  display: flex;
-  color: white;
-  justify-content: center;
-}
-
 .read-link-counter, .unread-link-counter {
   margin-left: 10px;
 }
@@ -121,7 +115,12 @@ main {
   font-size: 26px;
 }
 
+<<<<<<< HEAD
 .enter-button, .clear-button {
+=======
+.enter-button,
+.clear-button {
+>>>>>>> mostly-working
   font-weight: 400;
   font-size: 16px;
   height: 30px;
@@ -131,6 +130,15 @@ main {
   color: #FFFFFF;
 }
 
+<<<<<<< HEAD
+=======
+.clear-button {
+  margin-top: 45px;
+  width: 86%;
+}
+
+
+>>>>>>> mostly-working
 .enter-button:hover,
 .clear-button:hover {
   background-color: #FFD773;
@@ -168,6 +176,13 @@ main {
 .error-cause {
   font-size: 16px;
   font-weight: 400;
+}
+
+.counter-display {
+  margin-top: 20px;
+  display: flex;
+  color: white;
+  justify-content: center;
 }
 
 /* ==============
@@ -282,7 +297,11 @@ main {
 
   .enter-button,
   .clear-button {
+<<<<<<< HEAD
     font-size: 20px;
+=======
+    font-size: 18px;
+>>>>>>> mostly-working
     font-weight: 700;
     height: 40px;
     margin-top: 15px;

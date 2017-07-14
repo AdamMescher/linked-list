@@ -23,9 +23,9 @@ var state = {
   numberOfReadLinks: 0,
   numberOfUnreadLinks: 0,
   updateLinkCount: function() {
-    linksCurrentlyOnPage = $('.bookmark-box').find().length;
-    numberOfReadLinks = $('.read').find().length;
-    numberOfUnreadLinks = $('.bookmark-box').find().length - $('.read').find().length;
+    linksCurrentlyOnPage = $('.bookmark-box').length;
+    numberOfReadLinks = $('.read-box').length;
+    numberOfUnreadLinks = $('.bookmark-box').length - $('.read-box').length;
 
     $('.total-link-number').text(linksCurrentlyOnPage);
     $('.read-link-number').text(numberOfReadLinks);
@@ -56,12 +56,8 @@ $('.enter-button').on('click', function(e) {
 
   removeErrorMessage();
 
-  // disableButton(enterButton);
-
   bookmarkTitleInput === '' ? displayErrorMessage('Title cannot be blank!') : null;
   bookmarkUrlInput === '' ? displayErrorMessage('URL cannot be blank!') : null;
-
-  bookmarkTitleInput.length === 0 || bookmarkUrlInput.length === 0 ? null : enableButton(enterButton);
 
   $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
 
@@ -72,6 +68,13 @@ $('.enter-button').on('click', function(e) {
   state.updateLinkCount();
 });
 
+// CLEAR BUTTON EVENT LISTENER
+
+$('.clear-button').on('click', function() {
+  $('.read-box').remove();
+  state.updateLinkCount();
+})
+
 // READ BUTTON EVENT LISTENER
 $('.right-side').on('click', '.read-link', function(e) {
   e.preventDefault();
@@ -79,11 +82,15 @@ $('.right-side').on('click', '.read-link', function(e) {
   $(this).closest('article').find('.bookmark-url-link').toggleClass('read-url');
   $(this).toggleClass('read-read');
   $(this).closest('div').find('.delete-link').toggleClass('read-delete');
+
+  state.updateLinkCount();
 });
 
 // DELETE BUTTON EVENT LISTENER
 $('.right-side').on('click', '.delete-link', function() {
   $(this).parents().eq(2).remove();
+
+  state.updateLinkCount();
 });
 
 // FUNCTION DECLARATIONS

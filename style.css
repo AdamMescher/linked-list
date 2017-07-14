@@ -54,6 +54,7 @@ body {
 
 main {
   display: flex;
+  height: 100%;
 }
 
 .bookmark-title, .bookmark-url, .bookmark-input {
@@ -146,17 +147,21 @@ main {
   background-color: #CFD8DC;
   width: 50%;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .bookmark-box {
+  height: 150px;
   margin-top: 3%;
   width: 92%;
   background: #FFFFFF;
   border: 2px solid #607D8B;
   display: flex;
-  flex-flow: column wrap;
+  flex: none;
+  flex-flow: column nowrap;
   justify-content: flex-start;
 }
 
@@ -221,8 +226,60 @@ main {
   font-weight: 800;
 }
 
-@media screen (max-size: 320px) {
+@media screen and (max-width: 400px) {
   main {
     flex-direction: column;
+  }
+
+  .left-side {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    height: 45%;
+    width: 100%;
+  }
+  .right-side {
+    height: 55vh;
+    width: 100%;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+    justify-content: : flex-start;
+  }
+
+  .bookmark-box {
+    height: 130px;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .bookmark-title-input, .bookmark-url-input, .enter-button, .error-message {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .enter-button {
+    height: 20px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .logo-image {
+    height: 18px;
+  }
+
+  .logo-text {
+    margin: 8px 0 -6px 0;
+  }
+
+  .error-message, .error-cause {
+    font-size: 8px;
+    padding: -2px 0 -2px 0;
+  }
+
+  .error-message {
+    margin: 0;
+    height: 8px;
   }
 }

@@ -24,9 +24,9 @@ var state = {
   numberOfReadLinks: 0,
   numberOfUnreadLinks: 0,
   updateLinkCount: function() {
-    linksCurrentlyOnPage = $('.bookmark-box').length || 0;
-    numberOfReadLinks = $('.read-box').length || 0;
-    numberOfUnreadLinks = $('.bookmark-box').length - $('.read-box').length || 0;
+    linksCurrentlyOnPage = $('.bookmark-box').length;
+    numberOfReadLinks = $('.read-box').length;
+    numberOfUnreadLinks = $('.bookmark-box').length - $('.read-box').length;
 
     $('.total-link-number').text(linksCurrentlyOnPage);
     $('.read-link-number').text(numberOfReadLinks);
@@ -87,7 +87,7 @@ $('.right-side').on('click', '.delete-link', function() {
 // CLEAR READ BOOKMARKS BUTTON
 
 $('.right-side').on('click', '.clear-button', function() {
-  console.log('click');
+
 })
 
 // FUNCTION DECLARATIONS

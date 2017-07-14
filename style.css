@@ -115,12 +115,10 @@ main {
   font-size: 26px;
 }
 
-<<<<<<< HEAD
-.enter-button, .clear-button {
-=======
+.enter-button, .clear-button {}
+
 .enter-button,
 .clear-button {
->>>>>>> mostly-working
   font-weight: 400;
   font-size: 16px;
   height: 30px;
@@ -130,15 +128,12 @@ main {
   color: #FFFFFF;
 }
 
-<<<<<<< HEAD
-=======
+
 .clear-button {
   margin-top: 45px;
   width: 86%;
 }
 
-
->>>>>>> mostly-working
 .enter-button:hover,
 .clear-button:hover {
   background-color: #FFD773;
@@ -152,7 +147,7 @@ main {
 .bookmark-title-input,
 .bookmark-url-input,
 .enter-button,
-.clear-button, 
+.clear-button,
 .error-message {
   margin-top: 40px;
 }

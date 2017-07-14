@@ -37,7 +37,6 @@ var state = {
 state.updateLinkCount();
 
 // INPUT FIELD EVENT LISTENER
-
 $('bookmark-title-input').keyup(function() {
   $('.enter-button').prop("disabled", !this.value);
 })
@@ -58,10 +57,12 @@ $('.enter-button').on('click', function(e) {
 
   bookmarkTitleInput === '' ? displayErrorMessage('Title cannot be blank!') : null;
   bookmarkUrlInput === '' ? displayErrorMessage('URL cannot be blank!') : null;
-
+  
   $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
 
   resetForm();
+
+  $('.enter-button').prop("disabled", true);
 
   $('.bookmark-title-input').focus();
 
@@ -86,8 +87,9 @@ $('.right-side').on('click', '.delete-link', function() {
 
 // CLEAR READ BOOKMARKS BUTTON
 
-$('.right-side').on('click', '.clear-button', function() {
-
+$('.clear-button').on('click', function() {
+  $('.read-box').remove();
+  state.updateLinkCount();
 })
 
 // FUNCTION DECLARATIONS
@@ -113,4 +115,8 @@ function displayErrorMessage(cause) {
 
 function removeErrorMessage() {
   $('.error-message').remove();
+}
+
+function disableButton(button) {
+  button.prop("disabled", true);
 }

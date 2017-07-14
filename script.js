@@ -10,8 +10,6 @@
 // Time no longer exists wish-list
 // * 'Are you sure you want to delete this' message when pressing delete button
 
-console.log("page refresh");
-
 var state = {
   activeBookmarksTotal: 0,
   activeBookmarksUnread: 0,
@@ -24,7 +22,10 @@ $('.enter-button').on('click', function(e) {
   var bookmarkTitleInput = $('.bookmark-title-input').val();
   var bookmarkUrlInput = $('.bookmark-url-input').val();
 
-  bookmarkTitleInput === '' || bookmarkUrlInput === '' ? displayErrorMessage() : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput);
+  bookmarkTitleInput === '' ? displayErrorMessage('Title cannot be blank!') : null;
+  bookmarkUrlInput === '' ? displayErrorMessage('URL cannot be blank!') : null;
+
+  $('.error-message').length > 0 ? null : createBookmarkBox(bookmarkTitleInput, bookmarkUrlInput)
 
   state.totalBookmarksCreated += 1;
 
@@ -64,10 +65,15 @@ function resetForm() {
   $('input[type="text"]').val('');
 }
 
-function displayErrorMessage() {
-  $('.left-side').prepend(``);
+function displayErrorMessage(cause) {
+  console.log('giedkkd');
+  $('.left-side').append(`<p class="error-message">Error: <span class="error-cause">${cause}</span></p>`);
 };
 
 function removeErrorMessage() {
-
+  $('.error-message').remove();
 };
+
+// function isEmpty(input) {
+//   input === '' ?  : false;
+// }
